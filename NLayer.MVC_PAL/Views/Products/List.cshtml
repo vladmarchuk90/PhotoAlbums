@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NLayer.BLL.DTO.ProductDTO>
+
+@{
+    ViewBag.Title = "Products list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <br />
+    <div>
+        @Html.ActionLink("Get products by category", "GetProductsByCategory") |
+        @Html.ActionLink("Get providers by category", "GetProvidersByCategory") |
+        @Html.ActionLink("Get products by provider", "GetProductsByProvider")
+    </div>
+    <br />
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+@foreach(var product in Model){
+        <tr>
+            <td>
+                @Html.DisplayFor(modelProduct => product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelProduct => product.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = product.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = product.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = product.ID })
+            </td>
+        </tr>
+}
+    </table>
+</div>
+
+<div>
+    @Html.ActionLink("Create new product", "Create")
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NLayer.BLL.DTO.ProductDTO>
+
+@{
+    ViewBag.Title = "Get products by category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Get products by category</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="text" value="@ViewBag.Id" name="id" />
+        <input type="submit" value="Get products" />
+    </p>
+}
+
+@if (Model != null && Model.Count() > 0)
+{
+<div>
+    <br />
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelProduct => product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelProduct => product.Price)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+}
+else if (Model != null && Model.Count() == 0)
+{
+    <p>There are not products in this category!</p>
+}
+
