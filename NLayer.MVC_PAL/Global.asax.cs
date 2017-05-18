@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using NLayer.MVC_PAL.Models;
+using NLayer.MVC_PAL.Util;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Optimization;
+using System.Data.Entity;
 
 namespace NLayer.MVC_PAL
 {
@@ -12,6 +11,8 @@ namespace NLayer.MVC_PAL
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<ApplicationContext>(new StoreIdentityDbInitializer());
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

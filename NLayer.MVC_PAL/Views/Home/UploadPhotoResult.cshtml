@@ -1,0 +1,13 @@
+﻿
+@if (ViewBag.UploadingSuccess == true)
+            {
+    <h4 style="color:forestgreen">
+        @ViewBag.UploadingMessage
+    </h4>
+}
+else if (ViewBag.UploadingSuccess == false)
+{
+    <h4 style="color:red">
+        @ViewBag.UploadingMessage
+    </h4>
+}

@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     background-color: #fff;
-    font-family: 'Open Sans',sans-serif,arial,helvetica,verdana
+    font-family: 'Open Sans',sans-serif,arial,helvetica,verdana;
 }
 
 .error{
@@ -21,6 +21,24 @@
     max-width: 700px;
     height: 400px;
     background: #000
+}
+
+.thumb img {
+    filter: none; /* IE6-9 */
+    -webkit-filter: grayscale(0);
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.thumb img:hover {
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1);
+    }
+
+.thumb {
+    padding: 5px;
 }
 
 /*JSSOR BEGIN*/

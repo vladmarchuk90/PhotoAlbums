@@ -10,16 +10,17 @@ namespace NLayer.DAL.Entities
     public class Album
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         [MaxLength(50)]
         public string Name { get; set; }
 
         [MaxLength(2000)]
         public string Description { get; set; }
+        public int amountOfLikes { get; set; }
 
-        public User User { get; set; }
-        public virtual ICollection<Photo> Photos { get; set; }
+        public virtual User User { get; set; }
+        public virtual IList<Photo> Photos { get; set; }
 
         public Album()
         {

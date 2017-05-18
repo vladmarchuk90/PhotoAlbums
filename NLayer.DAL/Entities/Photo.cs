@@ -10,19 +10,18 @@ namespace NLayer.DAL.Entities
     public class Photo
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public int AlbumId { get; set; }
+        public int? UserId { get; set; }
+        public int? AlbumId { get; set; }
 
-        //[MaxLength(200)]
         public string Title { get; set; }
-
-        //[MaxLength(200)]
         public string Description { get; set; }
 
         public DateTime DateUploaded { get; set; }
+        public int amountOfLikes { get; set; }
         public string PathToPhoto { get; set; }
+        public string PathToThumbPhoto { get; set; }
 
-        public User User { get; set; }
-        public Album Album { get; set; }
+        public virtual User User { get; set; }
+        public virtual Album Album { get; set; }
     }
 }

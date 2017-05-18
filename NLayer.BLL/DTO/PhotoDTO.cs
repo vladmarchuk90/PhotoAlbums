@@ -15,6 +15,8 @@ namespace NLayer.BLL.DTO
         public string Description { get; set; }
         public DateTime DateUploaded { get; set; }
         public string PathToPhoto { get; set; }
+        public string PathToThumbPhoto { get; set; }
+        public int amountOfLikes { get; set; }
 
         //public UserDTO User { get; set; }
         //public AlbumDTO Album { get; set; }

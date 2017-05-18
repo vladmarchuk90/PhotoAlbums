@@ -1,0 +1,99 @@
+﻿@using NLayer.BLL.DTO;
+
+@model UserDTO
+
+@{
+    ViewBag.Title = "MyPhoto";
+}
+
+@if (ViewBag.Admin == true)
+{
+    <div class="container" style="background-color:azure">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+               <h4>Admin panel</h4>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <h4>@Html.ActionLink("Manage role", "Index", "Roles")</h4>
+            </div>
+        </div>
+    </div>
+}
+
+@{
+    string pathToAvatar = null;
+    if (@Model.PathToAvatar == null)
+    {
+        pathToAvatar = "/Content/avatar_empty.png";
+    }
+    else
+    {
+        pathToAvatar = @Model.PathToAvatar;
+    }
+}
+
+<div class="container" style="background-color:cornflowerblue">
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <img src="@pathToAvatar" alt="Avatar"/>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <h3 style="color:white">@Model.FullName.ToUpper()</h3>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <h1 style="color:dimgrey">My Photo</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="background-color:aliceblue">
+    <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="btn-group">
+                <button id="userPhotos" type="button" class="btn btn-default" data-toggle="button">My photos</button>
+                <button id="userAlbums" type="button" class="btn btn-default" data-toggle="button">Albums</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" id="userContent">
+        @Html.Action("PhotosOfUser", new { userId = Model.Id })
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+
+    <script>
+        $(function () {
+            $("a.fancyimage").fancybox();
+
+            $("#userPhotos").click(function () {
+                makeRequest(@Model.Id, "@Url.Action("PhotosOfUser")");
+            });
+
+            $("#userAlbums").click(function () {
+                makeRequest(@Model.Id, "@Url.Action("AlbumsOfUser")");
+                });
+
+                function makeRequest(id, url) {
+                    $.ajax({
+                        url: url,
+                        type: "GET",
+                        data: "userId=" + id,
+                        success: function (response) {
+                            $("#userContent").html(response);
+                        },
+                    });
+                }
+            });
+    </script>
+}

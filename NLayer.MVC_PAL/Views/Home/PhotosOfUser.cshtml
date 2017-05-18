@@ -1,0 +1,12 @@
+﻿@using NLayer.BLL.DTO;
+
+@model IEnumerable<PhotoDTO>
+
+@foreach (PhotoDTO img in Model)
+{
+    <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+        <a class="fancyimage" rel="group" href="@img.PathToPhoto">
+            <img class="img-responsive" src="@img.PathToThumbPhoto" />
+        </a>
+    </div>
+}

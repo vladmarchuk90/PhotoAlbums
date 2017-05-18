@@ -1,0 +1,66 @@
+﻿@using NLayer.BLL.DTO;
+
+@model IEnumerable<PhotoDTO>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12" >
+            @if (ViewBag.Album != null && ViewBag.Album.User != null)
+            {
+                string pathToAvater = "";
+                if(@ViewBag.Album.User.PathToAvatar == null)
+                {
+                    pathToAvater = "/Content/avatar_empty.png";
+                }
+                else
+                {
+                    pathToAvater = @ViewBag.Album.User.PathToAvatar;
+                }
+
+
+                <h5>Autor</h5>
+                <img style="width:70px; height:70px;" src="@pathToAvater" alt="Avatar" />
+                <h5><b>@ViewBag.Album.User.FullName</b></h5>
+            }
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            @if (ViewBag.Album != null)
+            {
+                <h3>Album: @ViewBag.Album.Name</h3>
+            }
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            @if (ViewBag.Album != null)
+            {
+                <h5>Description: @ViewBag.Album.Description</h5>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (PhotoDTO img in Model)
+        {
+            <div class="col-md-3 col-sm-4 col-xs-6 thumb">
+                <a class="fancyimage" rel="group" href="@img.PathToPhoto">
+                    <img class="img-responsive" src="@img.PathToThumbPhoto"  />
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function ($) {
+        $("a.fancyimage").fancybox();
+    });
+</script>
+
+

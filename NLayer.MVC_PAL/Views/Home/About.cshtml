@@ -4,11 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<br />
-<br />
-<br />
+@{ 
+    if (ViewBag.Admin == true)
+    {
+        <h4 style="color:blue">Hi, Admin!</h4>
+    }
+}
 
 <div>
+    <h3>This site is free!</h3>
     <h3>All rights is reserved</h3>
 </div>
 

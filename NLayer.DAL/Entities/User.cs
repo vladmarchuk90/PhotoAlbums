@@ -14,9 +14,9 @@ namespace NLayer.DAL.Entities
         [MaxLength(50)]
         public string Name { get; set; }
 
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-        
-        public virtual ICollection<Album> Albums { get; set; }
+        [MaxLength(50)]
+        public string FullName { get; set; }
+
+        public string PathToAvatar { get; set; }
     }
 }

@@ -1,7 +1,6 @@
-﻿using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
+﻿using NLayer.MVC_PAL.Util;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace NLayer.MVC_PAL.Models
 {

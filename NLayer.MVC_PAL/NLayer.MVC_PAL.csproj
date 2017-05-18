@@ -49,6 +49,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ImageHelper">
+      <HintPath>..\packages\ImageHelper.1.0.2\lib\ImageHelper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -142,50 +145,54 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PhotoStorage\Album1\photo1.jpg" />
-    <Content Include="PhotoStorage\Album1\photo2.jpg" />
-    <Content Include="PhotoStorage\Album1\photo3.jpg" />
-    <Content Include="PhotoStorage\Album1\photo4.jpg" />
+    <Content Include="Content\ajax-loader.gif" />
+    <Content Include="Content\ajax-loader_2.gif" />
+    <Content Include="Content\ajax-loader_3.gif" />
+    <Content Include="Content\ajax-loader_4.gif" />
+    <Content Include="Content\avatar_empty.png" />
+    <Content Include="Content\bootstrap_3_3_2.min.css" />
+    <Content Include="Content\empty-album.png" />
+    <Content Include="fancybox\blank.gif" />
+    <Content Include="fancybox\fancybox_loading%402x.gif" />
+    <Content Include="fancybox\fancybox_loading.gif" />
+    <Content Include="fancybox\fancybox_overlay.png" />
+    <Content Include="fancybox\fancybox_sprite%402x.png" />
+    <Content Include="fancybox\fancybox_sprite.png" />
+    <Content Include="fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="fancybox\jquery.fancybox.css" />
+    <Content Include="fancybox\jquery.fancybox.js" />
+    <Content Include="fancybox\jquery.fancybox.pack.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="PhotoStorage\Album2\01.jpg" />
-    <Content Include="PhotoStorage\Album2\02.jpg" />
-    <Content Include="PhotoStorage\Album2\03.jpg" />
-    <Content Include="PhotoStorage\Album2\04.jpg" />
-    <Content Include="PhotoStorage\Album2\05.jpg" />
-    <Content Include="PhotoStorage\Album2\06.jpg" />
-    <Content Include="PhotoStorage\Album2\07.jpg" />
-    <Content Include="PhotoStorage\Album2\08.jpg" />
-    <Content Include="PhotoStorage\Album2\09.jpg" />
-    <Content Include="PhotoStorage\Album2\10.jpg" />
-    <Content Include="PhotoStorage\Album2\11.jpg" />
-    <Content Include="PhotoStorage\Album2\12.jpg" />
-    <Content Include="PhotoStorage\Album2\a17.png" />
-    <Content Include="PhotoStorage\Album2\loading.gif" />
-    <Content Include="PhotoStorage\Album2\t01.png" />
-    <Content Include="PhotoStorage\Album2\thumb-01.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-02.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-03.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-04.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-05.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-06.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-07.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-08.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-09.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-10.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-11.jpg" />
-    <Content Include="PhotoStorage\Album2\thumb-12.jpg" />
+    <Content Include="Scripts\bootstrap-filestyle.js" />
+    <Content Include="Scripts\bootstrap-filestyle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap_3_3_2.min.js" />
     <Content Include="Scripts\galleria-1.5.7.js" />
     <Content Include="Scripts\galleria-1.5.7.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -196,7 +203,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -205,39 +214,49 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ApplicationContext.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\ApplicationRoleManager.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserManager .cs" />
+    <Compile Include="Models\EditRoleModel.cs" />
+    <Compile Include="Models\CreateRoleModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\FileHelper.cs" />
+    <Compile Include="Util\ImageHelper.cs" />
     <Compile Include="Util\NinjectDependencyResolver.cs" />
+    <Compile Include="Util\StoreIdentityDbInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Products\List.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Shared\ErrorProductIsNotFound.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\GetProductsByCategory.cshtml" />
-    <Content Include="Views\Products\GetProvidersByCategory.cshtml" />
-    <Content Include="Views\Products\GetProductsByProvider.cshtml" />
+    <Content Include="Views\Error\InternalError.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\UploadPhoto.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Home\Photos.cshtml" />
+    <Content Include="Views\Home\MyPhoto.cshtml" />
+    <Content Include="Views\Home\PhotosOfUser.cshtml" />
+    <Content Include="Views\Home\AlbumsOfUser.cshtml" />
+    <Content Include="Views\Home\CreateAlbum.cshtml" />
+    <Content Include="Views\Home\EditAlbum.cshtml" />
+    <Content Include="Views\Home\UploadPhotoResult.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -247,7 +266,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\About\" />
+    <Folder Include="PhotoStorage\" />
     <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>

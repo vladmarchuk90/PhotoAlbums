@@ -12,6 +12,7 @@ namespace NLayer.MVC_PAL.App_Start
     using Ninject.Modules;
     using Ninject.Web.Common;
     using NLayer.BLL.Services;
+    using System.Configuration;
 
     public static class NinjectWebCommon 
     {

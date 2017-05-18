@@ -21,13 +21,8 @@ namespace NLayer.MVC_PAL
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-filestyle.js",
                       "~/Scripts/respond.js"));
-
-            //Galleria lib
-            //bundles.Add(new ScriptBundle("~/bundles/galleria").Include(
-            //            "~/Scripts/galleria-{version}.js",
-            //            "~/galleria/themes/classic/galleria.classic.js",
-            //            "~/Scripts/LocalScripts/WorkWithGalleria.js"));
 
             //Jssor Slider
             bundles.Add(new ScriptBundle("~/bundles/jssorSlider").Include(
@@ -35,9 +30,18 @@ namespace NLayer.MVC_PAL
                      "~/Scripts/jssor.slider-23.1.6.mini.js",
                      "~/Scripts/LocalScripts/jssorSlider.js"));
 
+            //fancybox
+            bundles.Add(new ScriptBundle("~/bundles/fancybox").Include(
+                     "~/fancybox/jquery.fancybox.js",
+                     "~/Scripts/jquery-1.11.2.min.js",
+                     "~/Scripts/bootstrap_3_3_2.min.js"
+                     ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap_3_3_2.min.css",
+                      "~/Content/site.css",
+                      "~/fancybox/jquery.fancybox.css"
+                      ));
         }
     }
 }

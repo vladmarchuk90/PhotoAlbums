@@ -51,7 +51,17 @@ namespace NLayer.DAL.Repositories
 
         public void Update(Album album)
         {
-            dbContext.Entry(album).State = EntityState.Modified;
+            //if (dbContext.Entry(album).State == EntityState.Detached)
+            //    dbContext.Albums.Attach(album);
+
+            string query =                      "UPDATE [dbo].[Albums] " +
+                                                "SET amountOfLikes = @likes@ " +
+                                                "WHERE Id = @id@";
+            query = query.Replace("@id@", "" + album.Id).Replace("@likes@", "" + album.amountOfLikes);
+
+            dbContext.Database.ExecuteSqlCommand(query);
+
+            //dbContext.Entry(album).State = EntityState.Modified;
         }
     }
 }

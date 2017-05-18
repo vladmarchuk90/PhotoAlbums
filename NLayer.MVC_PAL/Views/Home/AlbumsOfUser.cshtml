@@ -1,0 +1,40 @@
+﻿@using NLayer.BLL.DTO;
+
+@model IEnumerable<AlbumDTO>
+
+<div class="container" style="background-color:aliceblue">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-3 col-sm-offset-2 col-sm-4 col-xs-12">
+            <h4 style="color:darkslategrey">
+                @Html.ActionLink("+ Create album", "CreateAlbum", new { userId = ViewBag.UserId })
+            </h4>
+        </div>
+    </div>
+</div>
+
+@foreach (AlbumDTO album in Model)
+{
+    string albumPhoto = "";
+
+    int amountPhotosInAlbum = album.Photos.Count;
+    if (amountPhotosInAlbum > 0)
+    {
+        albumPhoto = @album.Photos[0].PathToThumbPhoto;
+    }
+    else
+    {
+        albumPhoto = "/Content/empty-album.png";
+    }
+
+    <div class="col-md-3 col-sm-4 col-xs-12 text-center">
+        <a class="fancyimage" rel="group" href=@Url.Action("EditAlbum", "Home", new { albumId = @album.Id, userId = @album.UserId, name = @album.Name, description = @album.Description })>
+            <img class="img-responsive img-thumbnail" src=@albumPhoto alt="@album.Name" />
+            <div>
+                @album.Name
+                <p style="font-size:small">
+                    @amountPhotosInAlbum photo
+                </p>
+            </div>
+        </a>
+    </div>
+}

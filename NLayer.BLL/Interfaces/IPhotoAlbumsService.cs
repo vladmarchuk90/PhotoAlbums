@@ -14,13 +14,14 @@ namespace NLayer.BLL.Interfaces
         IEnumerable<AlbumDTO> GetAlbums();
         IEnumerable<PhotoDTO> GetPhotos();
 
-        UserDTO GetUser(int id);
+        UserDTO GetUser(string Name);
         AlbumDTO GetAlbum(int id);
         PhotoDTO GetPhoto(int id);
 
         IEnumerable<AlbumDTO> GetAlbumsOfUser(int id);
         IEnumerable<PhotoDTO> GetPhotosOfUser(int id);
         IEnumerable<PhotoDTO> GetPhotosOfAlbum(int id);
+        IEnumerable<AlbumDTO> GetGeneralAlbums();
 
         void CreateUser(UserDTO userDTO);
         void CreateAlbum(AlbumDTO albumDTO);
